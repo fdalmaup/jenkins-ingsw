@@ -4,7 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         withGradle() {
-          sh 'java -version'
+          sh '''java -version
+pwd'''
         }
 
       }
