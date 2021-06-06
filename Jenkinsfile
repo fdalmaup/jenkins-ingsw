@@ -4,7 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         withGradle() {
-          sh './gradlew clean build --info'
+          sh '''
+java -version
+./gradlew clean build --info'''
         }
 
       }
