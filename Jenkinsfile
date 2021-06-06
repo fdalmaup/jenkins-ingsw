@@ -11,5 +11,29 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        withGradle() {
+          sh 'gradle test'
+        }
+
+      }
+    }
+
+    stage('Validate') {
+      steps {
+        withGradle() {
+          sh 'gradle check'
+        }
+
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deployando'
+      }
+    }
+
   }
 }
