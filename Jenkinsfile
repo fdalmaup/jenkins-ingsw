@@ -5,7 +5,9 @@ pipeline {
       steps {
         withGradle() {
           sh '''java -version
-pwd'''
+pwd
+
+ls'''
         }
 
       }
