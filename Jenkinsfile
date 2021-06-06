@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''echo $JAVA_HOME
-ls -la /opt/java/openjdk'''
+        withGradle() {
+          sh './gradlew clean build'
+        }
+
       }
     }
 
