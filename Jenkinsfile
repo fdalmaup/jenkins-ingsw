@@ -4,8 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         withGradle() {
-          sh '''./gradlew build
-./gradlew bootRun --args=\'--server.port=8888\''''
+          sh './gradlew build'
         }
 
       }
@@ -32,6 +31,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deployando'
+        sh './gradlew bootRun --args=\'--server.port=8888\''
       }
     }
 
