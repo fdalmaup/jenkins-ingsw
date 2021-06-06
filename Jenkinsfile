@@ -5,7 +5,7 @@ pipeline {
       steps {
         withGradle() {
           sh '''./gradlew build
-./gradlew bootRun'''
+./gradlew bootRun --args=\'--server.port=8888\''''
         }
 
       }
