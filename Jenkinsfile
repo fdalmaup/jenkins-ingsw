@@ -3,12 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        withGradle() {
-          sh '''
-java -version
-./gradlew clean build --info'''
-        }
-
+        sh 'echo $JAVA_HOME'
       }
     }
 
