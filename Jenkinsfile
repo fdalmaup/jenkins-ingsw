@@ -13,7 +13,7 @@ pipeline {
     stage('Test') {
       steps {
         withGradle() {
-          sh 'gradle test'
+          sh './gradlew test'
         }
 
       }
@@ -22,7 +22,7 @@ pipeline {
     stage('Validate') {
       steps {
         withGradle() {
-          sh 'gradle check'
+          sh './gradlew check'
         }
 
       }
