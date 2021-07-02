@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.132-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.618-0300")
 public final class _Item extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.Item> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Item __singleton = new _Item();
@@ -37,7 +36,7 @@ public final class _Item extends org.seasar.doma.jdbc.entity.AbstractEntityType<
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Item, ?>> __embeddedPropertyTypeMap;
 
     private _Item() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "Item";
         __catalogName = "";
@@ -58,17 +57,17 @@ public final class _Item extends org.seasar.doma.jdbc.entity.AbstractEntityType<
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Item, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Item, ?>> __embeddedMap) {
-        __map.put("itemId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "itemId", "", __namingType, false));
-        __map.put("productId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "productId", "PRODUCTID", __namingType, true, true, false));
-        __map.put("listPrice", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.math.BigDecimal, sample.entity.Amount>(sample.entity.Item.class, sample.entity._Amount.getSingletonInternal().createScalarSupplier(), "listPrice", "", __namingType, true, true, false));
-        __map.put("unitCost", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.math.BigDecimal, java.math.BigDecimal>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofBigDecimal(), "unitCost", "", __namingType, true, true, false));
-        __map.put("supplierId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.Integer, java.lang.Integer>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofPrimitiveInt(), "supplierId", "SUPPLIER", __namingType, true, true, false));
-        __map.put("status", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "status", "", __namingType, true, true, false));
-        __map.put("attribute1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "attribute1", "ATTR1", __namingType, true, true, false));
-        __map.put("attribute2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "attribute2", "ATTR2", __namingType, true, true, false));
-        __map.put("attribute3", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "attribute3", "ATTR3", __namingType, true, true, false));
-        __map.put("attribute4", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "attribute4", "ATTR4", __namingType, true, true, false));
-        __map.put("attribute5", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "attribute5", "ATTR5", __namingType, true, true, false));
+        __map.put("itemId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "itemId", "", __namingType, false));
+        __map.put("productId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "productId", "PRODUCTID", __namingType, true, true, false));
+        __map.put("listPrice", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.math.BigDecimal, sample.entity.Amount>(sample.entity.Item.class, sample.entity._Amount.getSingletonInternal()::createScalar, "listPrice", "", __namingType, true, true, false));
+        __map.put("unitCost", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.math.BigDecimal, java.math.BigDecimal>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.BigDecimalWrapper()), "unitCost", "", __namingType, true, true, false));
+        __map.put("supplierId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.Integer, java.lang.Integer>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.PrimitiveIntWrapper()), "supplierId", "SUPPLIER", __namingType, true, true, false));
+        __map.put("status", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "status", "", __namingType, true, true, false));
+        __map.put("attribute1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "attribute1", "ATTR1", __namingType, true, true, false));
+        __map.put("attribute2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "attribute2", "ATTR2", __namingType, true, true, false));
+        __map.put("attribute3", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "attribute3", "ATTR3", __namingType, true, true, false));
+        __map.put("attribute4", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "attribute4", "ATTR4", __namingType, true, true, false));
+        __map.put("attribute5", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Item, java.lang.String, java.lang.String>(sample.entity.Item.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "attribute5", "ATTR5", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Item, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Item, ?>> __idList) {
@@ -105,9 +104,8 @@ public final class _Item extends org.seasar.doma.jdbc.entity.AbstractEntityType<
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -247,6 +245,10 @@ public final class _Item extends org.seasar.doma.jdbc.entity.AbstractEntityType<
      */
     public static _Item newInstance() {
         return new _Item();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.Item> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

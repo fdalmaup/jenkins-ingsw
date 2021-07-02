@@ -1,18 +1,17 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:02.905-0700")
-@org.seasar.doma.DomainTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.404-0300")
 public final class _Amount extends org.seasar.doma.jdbc.domain.AbstractDomainType<java.math.BigDecimal, sample.entity.Amount> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Amount singleton = new _Amount();
 
     private _Amount() {
-        super(org.seasar.doma.internal.wrapper.WrapperSuppliers.ofBigDecimal());
+        super(org.seasar.doma.wrapper.BigDecimalWrapper::new);
     }
 
     @Override

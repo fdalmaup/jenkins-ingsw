@@ -1,4 +1,4 @@
-sample/ApplicationTest.java
- sample.ApplicationTest
 model/CartTest.java
  test.java.model.ShoppingCartTest
+sample/ApplicationTest.java
+ sample.ApplicationTest

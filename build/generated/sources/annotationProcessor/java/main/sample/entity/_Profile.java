@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.161-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.464-0300")
 public final class _Profile extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.Profile> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Profile __singleton = new _Profile();
@@ -37,7 +36,7 @@ public final class _Profile extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Profile, ?>> __embeddedPropertyTypeMap;
 
     private _Profile() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "Profile";
         __catalogName = "";
@@ -58,11 +57,11 @@ public final class _Profile extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Profile, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Profile, ?>> __embeddedMap) {
-        __map.put("username", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Profile, java.lang.String, java.lang.String>(sample.entity.Profile.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "username", "USERID", __namingType, false));
-        __map.put("favouriteCategoryId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.String, java.lang.String>(sample.entity.Profile.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "favouriteCategoryId", "FAVCATEGORY", __namingType, true, true, false));
-        __map.put("languagePreference", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.String, java.lang.String>(sample.entity.Profile.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "languagePreference", "LANGPREF", __namingType, true, true, false));
-        __map.put("listOption", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.Boolean, java.lang.Boolean>(sample.entity.Profile.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofPrimitiveBoolean(), "listOption", "MYLISTOPT", __namingType, true, true, false));
-        __map.put("bannerOption", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.Boolean, java.lang.Boolean>(sample.entity.Profile.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofPrimitiveBoolean(), "bannerOption", "BANNEROPT", __namingType, true, true, false));
+        __map.put("username", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Profile, java.lang.String, java.lang.String>(sample.entity.Profile.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "username", "USERID", __namingType, false));
+        __map.put("favouriteCategoryId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.String, java.lang.String>(sample.entity.Profile.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "favouriteCategoryId", "FAVCATEGORY", __namingType, true, true, false));
+        __map.put("languagePreference", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.String, java.lang.String>(sample.entity.Profile.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "languagePreference", "LANGPREF", __namingType, true, true, false));
+        __map.put("listOption", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.Boolean, java.lang.Boolean>(sample.entity.Profile.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.PrimitiveBooleanWrapper()), "listOption", "MYLISTOPT", __namingType, true, true, false));
+        __map.put("bannerOption", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Profile, java.lang.Boolean, java.lang.Boolean>(sample.entity.Profile.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.PrimitiveBooleanWrapper()), "bannerOption", "BANNEROPT", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Profile, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Profile, ?>> __idList) {
@@ -99,9 +98,8 @@ public final class _Profile extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -235,6 +233,10 @@ public final class _Profile extends org.seasar.doma.jdbc.entity.AbstractEntityTy
      */
     public static _Profile newInstance() {
         return new _Profile();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.Profile> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

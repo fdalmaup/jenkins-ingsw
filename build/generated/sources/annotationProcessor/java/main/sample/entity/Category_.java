@@ -1,11 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.015-0700")
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.586-0300")
 public final class Category_ implements org.seasar.doma.jdbc.criteria.metamodel.EntityMetamodel<sample.entity.Category> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private final String __qualifiedTableName;

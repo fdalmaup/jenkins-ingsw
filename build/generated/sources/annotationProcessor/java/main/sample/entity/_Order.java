@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.062-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.537-0300")
 public final class _Order extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.Order> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Order __singleton = new _Order();
@@ -45,7 +44,7 @@ public final class _Order extends org.seasar.doma.jdbc.entity.AbstractEntityType
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Order, ?>> __embeddedPropertyTypeMap;
 
     private _Order() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "Order";
         __catalogName = "";
@@ -66,31 +65,31 @@ public final class _Order extends org.seasar.doma.jdbc.entity.AbstractEntityType
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Order, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Order, ?>> __embeddedMap) {
-        __map.put("orderId", new org.seasar.doma.jdbc.entity.GeneratedIdPropertyType<sample.entity.Order, java.lang.Integer, java.lang.Integer>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofInteger(), "orderId", "", __namingType, false, __idGenerator));
-        __map.put("username", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "username", "USERID", __namingType, true, true, false));
-        __map.put("orderDate", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.time.LocalDateTime, java.time.LocalDateTime>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofLocalDateTime(), "orderDate", "", __namingType, true, true, false));
-        __map.put("shipAddress1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipAddress1", "SHIPADDR1", __namingType, true, true, false));
-        __map.put("shipAddress2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipAddress2", "SHIPADDR2", __namingType, true, true, false));
-        __map.put("shipCity", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipCity", "", __namingType, true, true, false));
-        __map.put("shipState", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipState", "", __namingType, true, true, false));
-        __map.put("shipZip", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipZip", "", __namingType, true, true, false));
-        __map.put("shipCountry", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipCountry", "", __namingType, true, true, false));
-        __map.put("billAddress1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billAddress1", "BILLADDR1", __namingType, true, true, false));
-        __map.put("billAddress2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billAddress2", "BILLADDR2", __namingType, true, true, false));
-        __map.put("billCity", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billCity", "", __namingType, true, true, false));
-        __map.put("billState", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billState", "", __namingType, true, true, false));
-        __map.put("billZip", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billZip", "", __namingType, true, true, false));
-        __map.put("billCountry", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billCountry", "", __namingType, true, true, false));
-        __map.put("courier", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "courier", "", __namingType, true, true, false));
-        __map.put("totalPrice", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.math.BigDecimal, sample.entity.Amount>(sample.entity.Order.class, sample.entity._Amount.getSingletonInternal().createScalarSupplier(), "totalPrice", "", __namingType, true, true, false));
-        __map.put("billToFirstName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billToFirstName", "", __namingType, true, true, false));
-        __map.put("billToLastName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "billToLastName", "", __namingType, true, true, false));
-        __map.put("shipToFirstName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipToFirstName", "", __namingType, true, true, false));
-        __map.put("shipToLastName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "shipToLastName", "", __namingType, true, true, false));
-        __map.put("creditCard", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "creditCard", "", __namingType, true, true, false));
-        __map.put("expiryDate", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "expiryDate", "EXPRDATE", __namingType, true, true, false));
-        __map.put("cardType", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "cardType", "", __namingType, true, true, false));
-        __map.put("locale", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "locale", "", __namingType, true, true, false));
+        __map.put("orderId", new org.seasar.doma.jdbc.entity.GeneratedIdPropertyType<sample.entity.Order, java.lang.Integer, java.lang.Integer>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.IntegerWrapper()), "orderId", "", __namingType, false, __idGenerator));
+        __map.put("username", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "username", "USERID", __namingType, true, true, false));
+        __map.put("orderDate", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.time.LocalDateTime, java.time.LocalDateTime>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.LocalDateTimeWrapper()), "orderDate", "", __namingType, true, true, false));
+        __map.put("shipAddress1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipAddress1", "SHIPADDR1", __namingType, true, true, false));
+        __map.put("shipAddress2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipAddress2", "SHIPADDR2", __namingType, true, true, false));
+        __map.put("shipCity", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipCity", "", __namingType, true, true, false));
+        __map.put("shipState", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipState", "", __namingType, true, true, false));
+        __map.put("shipZip", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipZip", "", __namingType, true, true, false));
+        __map.put("shipCountry", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipCountry", "", __namingType, true, true, false));
+        __map.put("billAddress1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billAddress1", "BILLADDR1", __namingType, true, true, false));
+        __map.put("billAddress2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billAddress2", "BILLADDR2", __namingType, true, true, false));
+        __map.put("billCity", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billCity", "", __namingType, true, true, false));
+        __map.put("billState", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billState", "", __namingType, true, true, false));
+        __map.put("billZip", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billZip", "", __namingType, true, true, false));
+        __map.put("billCountry", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billCountry", "", __namingType, true, true, false));
+        __map.put("courier", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "courier", "", __namingType, true, true, false));
+        __map.put("totalPrice", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.math.BigDecimal, sample.entity.Amount>(sample.entity.Order.class, sample.entity._Amount.getSingletonInternal()::createScalar, "totalPrice", "", __namingType, true, true, false));
+        __map.put("billToFirstName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billToFirstName", "", __namingType, true, true, false));
+        __map.put("billToLastName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "billToLastName", "", __namingType, true, true, false));
+        __map.put("shipToFirstName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipToFirstName", "", __namingType, true, true, false));
+        __map.put("shipToLastName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "shipToLastName", "", __namingType, true, true, false));
+        __map.put("creditCard", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "creditCard", "", __namingType, true, true, false));
+        __map.put("expiryDate", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "expiryDate", "EXPRDATE", __namingType, true, true, false));
+        __map.put("cardType", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "cardType", "", __namingType, true, true, false));
+        __map.put("locale", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Order, java.lang.String, java.lang.String>(sample.entity.Order.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "locale", "", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Order, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Order, ?>> __idList) {
@@ -127,9 +126,8 @@ public final class _Order extends org.seasar.doma.jdbc.entity.AbstractEntityType
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -283,6 +281,10 @@ public final class _Order extends org.seasar.doma.jdbc.entity.AbstractEntityType
      */
     public static _Order newInstance() {
         return new _Order();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.Order> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

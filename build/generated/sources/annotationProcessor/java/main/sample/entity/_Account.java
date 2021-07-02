@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.122-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.601-0300")
 public final class _Account extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.Account> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Account __singleton = new _Account();
@@ -37,7 +36,7 @@ public final class _Account extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Account, ?>> __embeddedPropertyTypeMap;
 
     private _Account() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "Account";
         __catalogName = "";
@@ -58,18 +57,18 @@ public final class _Account extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Account, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Account, ?>> __embeddedMap) {
-        __map.put("username", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "username", "USERID", __namingType, false));
-        __map.put("email", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "email", "", __namingType, true, true, false));
-        __map.put("firstName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "firstName", "", __namingType, true, true, false));
-        __map.put("lastName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "lastName", "", __namingType, true, true, false));
-        __map.put("status", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "status", "", __namingType, true, true, false));
-        __map.put("address1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "address1", "ADDR1", __namingType, true, true, false));
-        __map.put("address2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "address2", "ADDR2", __namingType, true, true, false));
-        __map.put("city", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "city", "", __namingType, true, true, false));
-        __map.put("state", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "state", "", __namingType, true, true, false));
-        __map.put("zip", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "zip", "", __namingType, true, true, false));
-        __map.put("country", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "country", "", __namingType, true, true, false));
-        __map.put("phone", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "phone", "", __namingType, true, true, false));
+        __map.put("username", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "username", "USERID", __namingType, false));
+        __map.put("email", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "email", "", __namingType, true, true, false));
+        __map.put("firstName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "firstName", "", __namingType, true, true, false));
+        __map.put("lastName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "lastName", "", __namingType, true, true, false));
+        __map.put("status", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "status", "", __namingType, true, true, false));
+        __map.put("address1", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "address1", "ADDR1", __namingType, true, true, false));
+        __map.put("address2", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "address2", "ADDR2", __namingType, true, true, false));
+        __map.put("city", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "city", "", __namingType, true, true, false));
+        __map.put("state", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "state", "", __namingType, true, true, false));
+        __map.put("zip", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "zip", "", __namingType, true, true, false));
+        __map.put("country", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "country", "", __namingType, true, true, false));
+        __map.put("phone", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Account, java.lang.String, java.lang.String>(sample.entity.Account.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "phone", "", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Account, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Account, ?>> __idList) {
@@ -106,9 +105,8 @@ public final class _Account extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -249,6 +247,10 @@ public final class _Account extends org.seasar.doma.jdbc.entity.AbstractEntityTy
      */
     public static _Account newInstance() {
         return new _Account();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.Account> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

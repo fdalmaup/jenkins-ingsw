@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.143-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.609-0300")
 public final class _Signon extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.Signon> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Signon __singleton = new _Signon();
@@ -37,7 +36,7 @@ public final class _Signon extends org.seasar.doma.jdbc.entity.AbstractEntityTyp
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Signon, ?>> __embeddedPropertyTypeMap;
 
     private _Signon() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "Signon";
         __catalogName = "";
@@ -58,8 +57,8 @@ public final class _Signon extends org.seasar.doma.jdbc.entity.AbstractEntityTyp
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Signon, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Signon, ?>> __embeddedMap) {
-        __map.put("username", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Signon, java.lang.String, java.lang.String>(sample.entity.Signon.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "username", "", __namingType, false));
-        __map.put("password", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Signon, java.lang.String, java.lang.String>(sample.entity.Signon.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "password", "", __namingType, true, true, false));
+        __map.put("username", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Signon, java.lang.String, java.lang.String>(sample.entity.Signon.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "username", "", __namingType, false));
+        __map.put("password", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Signon, java.lang.String, java.lang.String>(sample.entity.Signon.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "password", "", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Signon, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Signon, ?>> __idList) {
@@ -96,9 +95,8 @@ public final class _Signon extends org.seasar.doma.jdbc.entity.AbstractEntityTyp
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -229,6 +227,10 @@ public final class _Signon extends org.seasar.doma.jdbc.entity.AbstractEntityTyp
      */
     public static _Signon newInstance() {
         return new _Signon();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.Signon> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

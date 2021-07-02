@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.092-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.499-0300")
 public final class _OrderLineItem extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.OrderLineItem> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _OrderLineItem __singleton = new _OrderLineItem();
@@ -37,7 +36,7 @@ public final class _OrderLineItem extends org.seasar.doma.jdbc.entity.AbstractEn
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.OrderLineItem, ?>> __embeddedPropertyTypeMap;
 
     private _OrderLineItem() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "OrderLineItem";
         __catalogName = "";
@@ -58,11 +57,11 @@ public final class _OrderLineItem extends org.seasar.doma.jdbc.entity.AbstractEn
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.OrderLineItem, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.OrderLineItem, ?>> __embeddedMap) {
-        __map.put("orderId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.OrderLineItem, java.lang.Integer, java.lang.Integer>(sample.entity.OrderLineItem.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofInteger(), "orderId", "", __namingType, false));
-        __map.put("lineNumber", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.OrderLineItem, java.lang.Integer, java.lang.Integer>(sample.entity.OrderLineItem.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofPrimitiveInt(), "lineNumber", "LINENUM", __namingType, false));
-        __map.put("quantity", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.OrderLineItem, java.lang.Integer, java.lang.Integer>(sample.entity.OrderLineItem.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofPrimitiveInt(), "quantity", "", __namingType, true, true, false));
-        __map.put("itemId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.OrderLineItem, java.lang.String, java.lang.String>(sample.entity.OrderLineItem.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "itemId", "", __namingType, true, true, false));
-        __map.put("unitPrice", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.OrderLineItem, java.math.BigDecimal, sample.entity.Amount>(sample.entity.OrderLineItem.class, sample.entity._Amount.getSingletonInternal().createScalarSupplier(), "unitPrice", "", __namingType, true, true, false));
+        __map.put("orderId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.OrderLineItem, java.lang.Integer, java.lang.Integer>(sample.entity.OrderLineItem.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.IntegerWrapper()), "orderId", "", __namingType, false));
+        __map.put("lineNumber", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.OrderLineItem, java.lang.Integer, java.lang.Integer>(sample.entity.OrderLineItem.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.PrimitiveIntWrapper()), "lineNumber", "LINENUM", __namingType, false));
+        __map.put("quantity", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.OrderLineItem, java.lang.Integer, java.lang.Integer>(sample.entity.OrderLineItem.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.PrimitiveIntWrapper()), "quantity", "", __namingType, true, true, false));
+        __map.put("itemId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.OrderLineItem, java.lang.String, java.lang.String>(sample.entity.OrderLineItem.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "itemId", "", __namingType, true, true, false));
+        __map.put("unitPrice", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.OrderLineItem, java.math.BigDecimal, sample.entity.Amount>(sample.entity.OrderLineItem.class, sample.entity._Amount.getSingletonInternal()::createScalar, "unitPrice", "", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.OrderLineItem, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.OrderLineItem, ?>> __idList) {
@@ -100,9 +99,8 @@ public final class _OrderLineItem extends org.seasar.doma.jdbc.entity.AbstractEn
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -236,6 +234,10 @@ public final class _OrderLineItem extends org.seasar.doma.jdbc.entity.AbstractEn
      */
     public static _OrderLineItem newInstance() {
         return new _OrderLineItem();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.OrderLineItem> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

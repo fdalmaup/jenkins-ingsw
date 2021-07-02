@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.076-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.555-0300")
 public final class _Product extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.Product> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _Product __singleton = new _Product();
@@ -37,7 +36,7 @@ public final class _Product extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Product, ?>> __embeddedPropertyTypeMap;
 
     private _Product() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "Product";
         __catalogName = "";
@@ -58,10 +57,10 @@ public final class _Product extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Product, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.Product, ?>> __embeddedMap) {
-        __map.put("productId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "productId", "", __namingType, false));
-        __map.put("categoryId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "categoryId", "CATEGORY", __namingType, true, true, false));
-        __map.put("name", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "name", "", __namingType, true, true, false));
-        __map.put("description", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "description", "DESCN", __namingType, true, true, false));
+        __map.put("productId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "productId", "", __namingType, false));
+        __map.put("categoryId", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "categoryId", "CATEGORY", __namingType, true, true, false));
+        __map.put("name", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "name", "", __namingType, true, true, false));
+        __map.put("description", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.Product, java.lang.String, java.lang.String>(sample.entity.Product.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "description", "DESCN", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Product, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.Product, ?>> __idList) {
@@ -98,9 +97,8 @@ public final class _Product extends org.seasar.doma.jdbc.entity.AbstractEntityTy
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -233,6 +231,10 @@ public final class _Product extends org.seasar.doma.jdbc.entity.AbstractEntityTy
      */
     public static _Product newInstance() {
         return new _Product();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.Product> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

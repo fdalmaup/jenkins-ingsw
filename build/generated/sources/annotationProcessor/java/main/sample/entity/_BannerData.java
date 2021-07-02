@@ -1,12 +1,11 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.46.2" }, date = "2021-06-27T13:16:03.151-0700")
-@org.seasar.doma.EntityTypeImplementation
+@javax.annotation.Generated(value = { "Doma", "2.36.0-beta-1" }, date = "2021-07-01T22:43:46.590-0300")
 public final class _BannerData extends org.seasar.doma.jdbc.entity.AbstractEntityType<sample.entity.BannerData> {
 
     static {
-        org.seasar.doma.internal.Artifact.validateVersion("2.46.2");
+        org.seasar.doma.internal.Artifact.validateVersion("2.36.0-beta-1");
     }
 
     private static final _BannerData __singleton = new _BannerData();
@@ -37,7 +36,7 @@ public final class _BannerData extends org.seasar.doma.jdbc.entity.AbstractEntit
     private final java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.BannerData, ?>> __embeddedPropertyTypeMap;
 
     private _BannerData() {
-        __listenerSupplier = org.seasar.doma.internal.jdbc.entity.NullEntityListenerSuppliers.of();
+        __listenerSupplier = () -> ListenerHolder.listener;
         __immutable = false;
         __name = "BannerData";
         __catalogName = "";
@@ -58,8 +57,8 @@ public final class _BannerData extends org.seasar.doma.jdbc.entity.AbstractEntit
     }
 
     private void initializeMaps(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.BannerData, ?>> __map, java.util.Map<String, org.seasar.doma.jdbc.entity.EmbeddedPropertyType<sample.entity.BannerData, ?>> __embeddedMap) {
-        __map.put("favouriteCategoryId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.BannerData, java.lang.String, java.lang.String>(sample.entity.BannerData.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "favouriteCategoryId", "FAVCATEGORY", __namingType, false));
-        __map.put("bannerName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.BannerData, java.lang.String, java.lang.String>(sample.entity.BannerData.class, org.seasar.doma.internal.jdbc.scalar.BasicScalarSuppliers.ofString(), "bannerName", "BANNERNAME", __namingType, true, true, false));
+        __map.put("favouriteCategoryId", new org.seasar.doma.jdbc.entity.AssignedIdPropertyType<sample.entity.BannerData, java.lang.String, java.lang.String>(sample.entity.BannerData.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "favouriteCategoryId", "FAVCATEGORY", __namingType, false));
+        __map.put("bannerName", new org.seasar.doma.jdbc.entity.DefaultPropertyType<sample.entity.BannerData, java.lang.String, java.lang.String>(sample.entity.BannerData.class, () -> new org.seasar.doma.internal.jdbc.scalar.BasicScalar<>(new org.seasar.doma.wrapper.StringWrapper()), "bannerName", "BANNERNAME", __namingType, true, true, false));
     }
 
     private void initializeIdList(java.util.Map<String, org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.BannerData, ?>> __map, java.util.List<org.seasar.doma.jdbc.entity.EntityPropertyType<sample.entity.BannerData, ?>> __idList) {
@@ -96,9 +95,8 @@ public final class _BannerData extends org.seasar.doma.jdbc.entity.AbstractEntit
     }
 
     @Override
-    @Deprecated
     public String getTableName() {
-        return getTableName(org.seasar.doma.internal.jdbc.entity.TableNames.namingFunction);
+        return getTableName(org.seasar.doma.jdbc.Naming.DEFAULT::apply);
     }
 
     @Override
@@ -229,6 +227,10 @@ public final class _BannerData extends org.seasar.doma.jdbc.entity.AbstractEntit
      */
     public static _BannerData newInstance() {
         return new _BannerData();
+    }
+
+    private static class ListenerHolder {
+        private static org.seasar.doma.jdbc.entity.NullEntityListener<sample.entity.BannerData> listener = new org.seasar.doma.jdbc.entity.NullEntityListener<>();
     }
 
 }

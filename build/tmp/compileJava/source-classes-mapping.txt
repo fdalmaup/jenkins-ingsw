@@ -14,10 +14,10 @@ sample/formatter/AmountFormatter.java
  sample.formatter.AmountFormatter
 sample/repository/CategoryRepository.java
  sample.repository.CategoryRepository
-sample/entity/Order.java
- sample.entity.Order
 sample/repository/ProductRepository.java
  sample.repository.ProductRepository
+sample/entity/Order.java
+ sample.entity.Order
 sample/web/account/EditAccountForm.java
  sample.web.account.EditAccountForm
 sample/service/CategoryService.java
@@ -45,10 +45,10 @@ sample/entity/Inventory.java
  sample.entity.Inventory
 sample/web/history/HistoryController.java
  sample.web.history.HistoryController
-sample/entity/OrderLineItem.java
- sample.entity.OrderLineItem
 sample/entity/Profile.java
  sample.entity.Profile
+sample/entity/OrderLineItem.java
+ sample.entity.OrderLineItem
 sample/web/account/AccountController.java
  sample.web.account.AccountController
 sample/web/signin/SigninController.java
@@ -75,18 +75,18 @@ sample/formatter/LocalDateTimeFormatter.java
  sample.formatter.LocalDateTimeFormatter
 sample/entity/BannerData.java
  sample.entity.BannerData
-sample/web/account/AddAccountForm.java
- sample.web.account.AddAccountForm
 sample/web/account/PasswordValidator.java
  sample.web.account.PasswordValidator
+sample/web/account/AddAccountForm.java
+ sample.web.account.AddAccountForm
 sample/entity/Category.java
  sample.entity.Category
 sample/entity/OrderStatus.java
  sample.entity.OrderStatus
-sample/web/order/OrderController.java
- sample.web.order.OrderController
 sample/ApplicationConfiguration.java
  sample.ApplicationConfiguration
+sample/web/order/OrderController.java
+ sample.web.order.OrderController
 sample/web/ErrorController.java
  sample.web.ErrorController
 sample/entity/Product.java
